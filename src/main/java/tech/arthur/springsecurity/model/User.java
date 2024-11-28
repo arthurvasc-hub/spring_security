@@ -11,7 +11,6 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @Entity(name = "user_table")
-
 public class User {
 
     @Id
@@ -19,9 +18,8 @@ public class User {
     @Column(name = "user_id")
     private UUID userId;
 
-    @Column(nullable = false, length = 50)
-    private String name;
-
+    @Column(unique = true, nullable = false, length = 25)
+    private String username;
 
     @Column(nullable = false, length = 50)
     private String password;
