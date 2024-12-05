@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "user_table")
+@Entity()
+@Table(name = "users_table")
 public class User {
 
     @Id
@@ -24,6 +25,8 @@ public class User {
     @Column(nullable = false, length = 50)
     private String password;
 
+
+    // Tabela intermediária para relação USER/ROLE.
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",

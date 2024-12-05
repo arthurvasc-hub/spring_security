@@ -10,7 +10,8 @@ import java.util.Set;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "role_table")
+@Entity
+@Table(name = "role_table")
 public class Role {
 
     @Id
@@ -39,5 +40,3 @@ public class Role {
 
     }
 }
-
-

@@ -10,7 +10,8 @@ import java.time.Instant;
 
 @Data
 @NoArgsConstructor
-@Entity
+@Entity()
+@Table(name = "post_table")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,7 +19,6 @@ public class Post {
     private long postId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     @Column(nullable = false, length = 250)
