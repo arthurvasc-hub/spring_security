@@ -2,16 +2,17 @@ package tech.arthur.springsecurity.model;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
-@Data
-@NoArgsConstructor
 @Entity()
 @Table(name = "post_table")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "postId")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

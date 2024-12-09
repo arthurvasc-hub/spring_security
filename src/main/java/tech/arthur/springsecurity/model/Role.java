@@ -2,16 +2,16 @@ package tech.arthur.springsecurity.model;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Value;
+import lombok.*;
 
 import java.util.Set;
 
-@Data
-@NoArgsConstructor
 @Entity
 @Table(name = "role_table")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "roleId")
 public class Role {
 
     @Id
@@ -35,6 +35,7 @@ public class Role {
         final long roleId;
 
         Values(long roleId){
+
             this.roleId = roleId;
         }
 
